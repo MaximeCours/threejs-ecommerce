@@ -3,6 +3,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
 
+// BOX MINECRAFT
+
 // Scene
 const scene = new THREE.Scene();
 

@@ -1,5 +1,2 @@
 import './style.css'
-// import './model'
-// import './minecraft'
-// import './piggPins'
 import './pins'
