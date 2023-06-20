@@ -1,2 +1,11 @@
-.minecraft {
+section {
+    margin-bottom: 20px;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    padding: 0;
+    gap: 10px;
+    justify-content: space-between;
 }
