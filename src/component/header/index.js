@@ -1,12 +1,26 @@
 import './style.scss'
 
+const { pathname } = window.location
+
+const pages = [
+  { name: 'Home', url: '/' },
+  { name: 'Shoes', url: '/shoes/' },
+  { name: 'Pins', url: '/pins/' },
+  { name: 'Personalize it !', url: '/personalize-it/' },
+]
+
 document.querySelector('.header').innerHTML = `
 <header>
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="crocs.html">Shoes</a></li>
-    <li><a href="pins.html">Pins</a></li>
-    <li><a href="personnaliser.html">Personalize it !</a></li>
+    ${pages
+      .map(
+        (page) => `
+    <li ${pathname === page.url ? "class='active'" : ''}><a href="${page.url}">${
+          page.name
+        }</a></li>
+  `
+      )
+      .join('')}
   </ul>
 </header>
 `
