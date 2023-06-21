@@ -1,0 +1,156 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [28.015403747558594, 7.609342575073242, 23.037872314453125],
+      "min": [1.9801862239837646, -18.423603057861328, 14.249564170837402],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 786384,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [0.9999715089797974, 0.9999384880065918, 1.0],
+      "min": [-0.9999497532844543, -0.9999808073043823, -1.0],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 355533,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1572768,
+      "componentType": 5126,
+      "count": 20550,
+      "max": [28.004749298095703, 7.602441310882568, 23.022804260253906],
+      "min": [1.9801862239837646, -18.421855926513672, 14.249326705932617],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1819368,
+      "componentType": 5126,
+      "count": 20550,
+      "max": [0.9999183416366577, 0.9999443888664246, 0.9999999403953552],
+      "min": [-0.9999893307685852, -0.9999093413352966, -1.0],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1422132,
+      "componentType": 5125,
+      "count": 58200,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Rubinstein 3D (https://sketchfab.com/rubinstein3d)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/pin-cap-mineria-b03c1103e7184bf6b32d8bbc31e31bd4",
+      "title": "Pin CAP Mineria"
+    },
+    "generator": "Sketchfab-12.67.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1654932,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2065968,
+      "byteOffset": 1654932,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 3720900,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "material_0",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.9213560469775339, 0.7562634311034856, 0.33587076659871073, 1.0
+        ],
+        "roughnessFactor": 0.1934070121951219
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [1],
+      "matrix": [
+        1.0, 0.0, 0.0, 0.0, 0.0, -0.9810871481895447, 0.19356654584407784, 0.0,
+        0.0, -0.19356654584407784, -0.9810871481895447, 0.0, 0.0,
+        16.9474811553955, 24.744724273681644, 1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [2, 3],
+      "name": "Pin CAP Mineria.OBJ.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_3"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [0]
+    }
+  ]
+}
