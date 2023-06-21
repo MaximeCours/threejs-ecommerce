@@ -13,69 +13,258 @@
       <section class="minecraft">
         <h2>Collection Minecraft</h2>
         <ul>
-          <li>
-            <canvas class="pig"></canvas>
+          <li class="productContainer" id="pigPinContainer">
+            <div>
+              <canvas class="pig"></canvas>
+            </div>
+            <button class="btn hidden" id="pigButton">Show details</button>
           </li>
-          <li>
-            <canvas class="human"></canvas>
+          <li class="productContainer" id="humanPinContainer">
+            <div>
+              <canvas class="human"></canvas>
+            </div>
+            <button class="btn hidden" id="humanButton">Show details</button>
           </li>
-          <li>
-            <canvas class="screamer"></canvas>
+          <li class="productContainer" id="screamerPinContainer">
+            <div>
+              <canvas class="screamer"></canvas>
+            </div>
+            <button class="btn hidden" id="screamerButton">Show details</button>
           </li>
-          <li>
-            <canvas class="person"></canvas>
+          <li class="productContainer" id="personPinContainer">
+            <div>
+              <canvas class="person"></canvas>
+            </div>
+            <button class="btn hidden" id="personButton">Show details</button>
           </li>
-          <li>
-            <canvas class="monster"></canvas>
+          <li class="productContainer" id="monsterPinContainer">
+            <div>
+              <canvas class="monster"></canvas>
+            </div>
+            <button class="btn hidden" id="monsterButton">Show details</button>
           </li>
         </ul>
       </section>
       <section>
         <h2>Tendance été 2023</h2>
         <ul>
-          <li>
-            <canvas class="flower"></canvas>
+          <li class="productContainer" id="flowerPinContainer">
+            <div>
+              <canvas class="flower"></canvas>
+            </div>
+            <button class="btn hidden" id="flowerButton">Show details</button>
           </li>
-          <li>
-            <canvas class="fish"></canvas>
+          <li class="productContainer" id="fishPinContainer">
+            <div>
+              <canvas class="fish"></canvas>
+            </div>
+            <button class="btn hidden" id="fishButton">Show details</button>
           </li>
-          <li>
-            <canvas class="clover"></canvas>
+          <li class="productContainer" id="cloverPinContainer">
+            <div>
+              <canvas class="clover"></canvas>
+            </div>
+            <button class="btn hidden" id="cloverButton">Show details</button>
           </li>
-          <li>
-            <canvas class="ladybug"></canvas>
+          <li class="productContainer" id="ladybugPinContainer">
+            <div>
+              <canvas class="ladybug"></canvas>
+            </div>
+            <button class="btn hidden" id="ladybugButton">Show details</button>
           </li>
-          <li>
-            <canvas class="cat"></canvas>
+          <li class="productContainer" id="catPinContainer">
+            <div>
+              <canvas class="cat"></canvas>
+            </div>
+            <button class="btn hidden" id="catButton">Show details</button>
           </li>
-          <li>
-            <canvas class="strawberry"></canvas>
+          <li class="productContainer" id="strawberryPinContainer">
+            <div>
+              <canvas class="strawberry"></canvas>
+            </div>
+            <button class="btn hidden" id="strawberryButton">Show details</button>
           </li>
-          <li>
-            <canvas class="donut"></canvas>
+          <li class="productContainer" id="donutPinContainer">
+            <div>
+              <canvas class="donut"></canvas>
+            </div>
+            <button class="btn hidden" id="donutButton">Show details</button>
           </li>
         </ul>
+      </section>
+      <section>
+        <div class="productDetails hidden" id="pigPinDetails">
+          <span class="back" id="pigPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="pig-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Minecraft</span>
+              <h3 class="productName">Cochon</h3>
+              <h4 class="productPrice">6 $</h4>
+              <div class="tagWrapper"><span class="tag tagBrown">minecraft</span><span class="tag tagLightBrown">animals</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+        <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="humanPinDetails">
+          <span class="back" id="humanPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="human-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Minecraft</span>
+              <h3 class="productName">Steve</h3>
+              <h4 class="productPrice">5 $</h4>
+              <div class="tagWrapper"><span class="tag tagBrown">minecraft</span><span class="tag tagPink">characters</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="screamerPinDetails">
+          <span class="back" id="screamerPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="screamer-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Minecraft</span>
+              <h3 class="productName">Creeper</h3>
+              <h4 class="productPrice">5 $</h4>
+              <div class="tagWrapper"><span class="tag tagBrown">minecraft</span><span class="tag tagPink">characters</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="personPinDetails">
+          <span class="back" id="personPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="person-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Minecraft</span>
+              <h3 class="productName">Alex</h3>
+              <h4 class="productPrice">4 $</h4>
+              <div class="tagWrapper"><span class="tag tagBrown">minecraft</span><span class="tag tagPink">characters</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="monsterPinDetails">
+          <span class="back" id="monsterPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="monster-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Minecraft</span>
+              <h3 class="productName">Enderman</h3>
+              <h4 class="productPrice">4 $</h4>
+              <div class="tagWrapper"><span class="tag tagBrown">minecraft</span><span class="tag tagPink">characters</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="flowerPinDetails">
+          <span class="back" id="flowerPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="flower-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Pâquerette</h3>
+              <h4 class="productPrice">6 $</h4>
+              <div class="tagWrapper"><span class="tag tagDarkGreen">nature</span><span class="tag tagFuschia">flowers</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="fishPinDetails">
+          <span class="back" id="fishPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="fish-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Poisson</h3>
+              <h4 class="productPrice">4 $</h4>
+              <div class="tagWrapper"><span class="tag tagLightBrown">animals</span><span class="tag tagBlue">pets</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+          </div>
+        <div class="productDetails hidden" id="cloverPinDetails">
+          <span class="back" id="cloverPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="clover-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Trèfle à 4 feuilles</h3>
+              <h4 class="productPrice">6 $</h4>
+              <div class="tagWrapper"><span class="tag tagDarkGreen">nature</span><span class="tag tagGreen">plants</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="ladybugPinDetails">
+          <span class="back" id="ladybugPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="ladybug-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Coccinelle</h3>
+              <h4 class="productPrice">5 $</h4>
+              <div class="tagWrapper"><span class="tag tagLightBrown">animals</span><span class="tag tagLightGreen">bugs</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="catPinDetails">
+          <span class="back" id="catPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="cat-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Chat noir</h3>
+              <h4 class="productPrice">8 $</h4>
+              <div class="tagWrapper"><span class="tag tagLightBrown">animals</span><span class="tag tagBlue">pets</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="strawberryPinDetails">
+          <span class="back" id="strawberryPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="strawberry-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Fraise</h3>
+              <h4 class="productPrice">5 $</h4>
+              <div class="tagWrapper"><span class="tag tagYellow">food</span><span class="tag tagOrange">fruits</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="donutPinDetails">
+          <span class="back" id="donutPinBack"></span>
+          <div class="pinInfo">
+            <canvas class="donut-big"></canvas>
+            <article class="productDetailsWrapper">
+              <span class="productCollection">Classics</span>
+              <h3 class="productName">Donut</h3>
+              <h4 class="productPrice">4 $</h4>
+              <div class="tagWrapper"><span class="tag tagYellow">food</span><span class="tag tagLightPink">pastries</span></div>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
       </section>
     </main>
     <div class="footer"></div>
     <script type="module" src="../main.js"></script>
     <script type="module" src="index.js"></script>
-    <script>
-      let pins = {
-        pig : {collection : "Minecraft", name : "Cochon", price : "6 $", tag1 : "minecraft", tag2 : "animals", desc : "Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a."},
-        human : {collection : "Minecraft", name : "Steve", price : "5 $", tag1 : "minecraft", tag2 : "characters", desc : "Praesent sit amet sodales mauris. Phasellus porttitor luctus leo quis semper. Sed molestie, quam."},
-        screamer : {collection : "Minecraft", name : "Creeper", price : "5 $", tag1 : "minecraft", tag2 : "characters", desc : "Etiam tempus velit a magna rutrum, nec semper lectus vulputate. Orci varius natoque penatibus."},
-        person : {collection : "Minecraft", name : "Alex", price : "4 $", tag1 : "minecraft", tag2 : "characters", desc : "Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a."},
-        monster : {collection : "Minecraft", name : "Enderman", price : "4 $", tag1 : "minecraft", tag2 : "characters", desc : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."},
-        flower : {collection : "Classics", name : "Pâquerette", price : "6 $", tag1 : "nature", tag2 : "flowers", desc : "Praesent sit amet sodales mauris. Phasellus porttitor luctus leo quis semper. Sed molestie, quam."},
-        fish : {collection : "Classics", name : "Poisson", price : "4 $", tag1 : "animal", tag2 : "pets", desc : "Etiam tempus velit a magna rutrum, nec semper lectus vulputate. Orci varius natoque penatibus."},
-        clover : {collection : "Classics", name : "Trèfle à 4 feuilles", price : "6 $", tag1 : "nature", tag2 : "plants", desc : "Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a."},
-        ladybug : {collection : "Classics", name : "Coccinelle", price : "5 $", tag1 : "animals", tag2 : "bugs", desc : "Praesent sit amet sodales mauris. Phasellus porttitor luctus leo quis semper. Sed molestie, quam."},
-        cat : {collection : "Classics", name : "Chat noir", price : "8 $", tag1 : "animals", tag2 : "pets", desc : "Etiam tempus velit a magna rutrum, nec semper lectus vulputate. Orci varius natoque penatibus."},
-        strawberry : {collection : "Classics", name : "Fraise", price : "5 $", tag1 : "food", tag2 : "fruits", desc : "Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a."},
-        donut : {collection : "Classics", name : "Donut", price : "4 $", tag1 : "food", tag2 : "pastries", desc : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."},
-
-    }
-    </script>
   </body>
 </html>
