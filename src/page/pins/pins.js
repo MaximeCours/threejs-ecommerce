@@ -58,6 +58,11 @@ const allPins = [
     color: 0xffffff,
     texture: 'strawberry.jpg',
   },
+  {
+    querySelector: '.donut',
+    color: 0xffffff,
+    texture: 'donut.jpg',
+  },
 ]
 
 for (let pin of allPins) {
@@ -67,8 +72,8 @@ for (let pin of allPins) {
 function pins(querySelector, color = 0x000000, texture) {
   // Sizes
   const sizes = {
-    width: 200,
-    height: 200,
+    width: 120,
+    height: 120,
   }
 
   const scene = new THREE.Scene()
@@ -114,7 +119,7 @@ function pins(querySelector, color = 0x000000, texture) {
     }),
   ]
 
-  const object =  new THREE.Mesh(new THREE.BoxGeometry(28, 28, 1), materials)
+  const object = new THREE.Mesh(new THREE.BoxGeometry(28, 28, 1), materials)
   object.position.set(0, 0, 4.5)
   object.rotation.set(-0.2, 0, 0)
   scene.add(object)

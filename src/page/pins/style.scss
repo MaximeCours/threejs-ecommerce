@@ -1,0 +1,28 @@
+main {
+  margin: 0 250px;
+  h1 {
+    text-align: center;
+  }
+  section {
+    margin-bottom: 150px;
+    h2 {
+      margin-bottom: 50px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 150px);
+      padding: 0;
+      gap: 50px;
+      justify-content: space-between;
+      li {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
