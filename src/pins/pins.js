@@ -112,7 +112,7 @@ function pins(querySelector, color = 0x000000, texture) {
       color: color,
     }),
     new THREE.MeshLambertMaterial({
-      map: textureLoader.load(`src/page/pins/textures/${texture}`),
+      map: textureLoader.load(`/pins/textures/${texture}`),
     }),
     new THREE.MeshLambertMaterial({
       color: color,
