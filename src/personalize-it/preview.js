@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 
 const model = 'footwear-crocs'
-const scale = 15
+const scale = 50
 const rotate = -2.5
 
 const pins = [
@@ -11,16 +11,33 @@ const pins = [
         querySelector: '.pig',
         color: 0xde9ba3,
         texture: 'pig.png',
+        positionX: 0.7,
+        positionY: -1.8,
+        positionZ: 3.5,
+        rotationX: -0.8,
+        rotationY: -0.3,
     },
     {
         querySelector: '.human',
         color: 0xcd9971,
         texture: 'human.png',
+        positionX: 2.4,
+        positionY: 0.8,
+        positionZ: 0.8,
+        rotationX: -1.2,
+        rotationY: 0.8,
+        rotationZ: 1,
     },
     {
         querySelector: '.monster',
         color: 0x2d2a2d,
         texture: 'monster.png',
+        positionX: 4,
+        positionY: -1.5,
+        positionZ: 4,
+        rotationX: -1.2,
+        rotationY: -0.2,
+        rotationZ: 1,
     },
 ]
 
@@ -54,6 +71,40 @@ loader.load(
   }
 )
 
+
+for (let pin of pins) {
+    addPins(pin.querySelector, pin.color, pin.texture, pin.positionX, pin.positionY, pin.positionZ, pin.rotationX, pin.rotationY, pin.rotationZ)
+}
+
+function addPins(querySelector, color = 0x000000, texture, positionX, positionY, positionZ, rotationX = 0, rotationY= 0, rotationZ= 0){
+    const textureLoader = new THREE.TextureLoader()
+    const materials = [
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            map: textureLoader.load(`/personalize-it/textures/${texture}`),
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+    ]
+
+    const object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
+    object.position.set(positionX, positionY, positionZ)
+    object.rotation.set(rotationX, rotationY, rotationZ)
+    scene.add(object)
+}
+
 // Light
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
@@ -61,7 +112,7 @@ scene.add(ambientLight)
 // Camera
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height)
 camera.position.x = 0
-camera.position.z = 7
+camera.position.z = 20
 scene.add(camera)
 
 // Renderer
