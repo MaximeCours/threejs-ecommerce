@@ -82,13 +82,14 @@ function pins(querySelector, color = 0x000000, texture) {
   const loader = new GLTFLoader()
 
   loader.load(
-    '/models/pin/scene.gltf',
+    '/assets/models/pin/scene.gltf',
     function (gltf) {
-      const box = new THREE.Box3().setFromObject(gltf.scene)
+      const model = gltf.scene
+      const box = new THREE.Box3().setFromObject(model)
       const center = new THREE.Vector3()
       box.getCenter(center)
-      gltf.scene.position.sub(center) // center the model
-      scene.add(gltf.scene)
+      model.position.sub(center) // center the model
+      scene.add(model)
     },
     undefined,
     function (error) {
