@@ -3,7 +3,26 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 
 const model = 'footwear-crocs'
-const scale = 2
+const scale = 15
+const rotate = -2.5
+
+const pins = [
+    {
+        querySelector: '.pig',
+        color: 0xde9ba3,
+        texture: 'pig.png',
+    },
+    {
+        querySelector: '.human',
+        color: 0xcd9971,
+        texture: 'human.png',
+    },
+    {
+        querySelector: '.monster',
+        color: 0x2d2a2d,
+        texture: 'monster.png',
+    },
+]
 
 // Sizes
 const sizes = {
@@ -21,6 +40,8 @@ loader.load(
   function (gltf) {
     const model = gltf.scene
     model.scale.set(scale, scale, scale)
+      model.rotation.y = rotate
+      model.rotation.x = 0.5
     const box = new THREE.Box3().setFromObject(model)
     const center = new THREE.Vector3()
     box.getCenter(center)
