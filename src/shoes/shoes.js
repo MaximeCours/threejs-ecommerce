@@ -6,12 +6,12 @@ const allShoes = [
   {
     querySelector: '.close-crocs',
     model: 'close-crocs',
-    scale: 310,
+    scale: 315,
   },
   {
     querySelector: '.violet-crocs',
     model: 'violet-crocs',
-    scale: 43,
+    scale: 32,
     rotate: -2,
   },
   {
@@ -36,7 +36,6 @@ const allShoes = [
     model: 'old-crocs',
     rotate: 1.7,
   },
-
   {
     querySelector: '.footwear-crocs',
     model: 'footwear-crocs',
@@ -106,7 +105,7 @@ function shoes(
   // Camera
   const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height)
   camera.position.x = 0
-  camera.position.z = 16
+  camera.position.z = 18
   scene.add(camera)
 
   // Renderer
