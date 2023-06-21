@@ -82,7 +82,7 @@ function pins(querySelector, color = 0x000000, texture) {
   const loader = new GLTFLoader()
 
   loader.load(
-    '/models/pin/scene.gltf',
+    '/assets/models/pin/scene.gltf',
     function (gltf) {
       const model = gltf.scene
       const box = new THREE.Box3().setFromObject(model)

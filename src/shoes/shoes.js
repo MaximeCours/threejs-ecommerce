@@ -74,7 +74,7 @@ function shoes(
   const loader = new GLTFLoader()
 
   loader.load(
-    `/models/shoes/${model}/scene.gltf`,
+    `/assets/models/shoes/${model}/scene.gltf`,
     function (gltf) {
       const model = gltf.scene
       model.scale.set(scale, scale, scale)
