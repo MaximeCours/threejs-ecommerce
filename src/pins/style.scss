@@ -10,11 +10,12 @@ main {
     }
     ul {
       display: grid;
-      grid-template-columns: repeat(4, 150px);
+      grid-template-columns: repeat(4, 200px);
       padding: 0;
       gap: 50px;
       justify-content: space-between;
       li {
+        position: relative;
         div {
           box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
           border-radius: 15px;
@@ -22,8 +23,8 @@ main {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
           margin-bottom: 15px;
           .productStill {
             height: 100px;
@@ -36,6 +37,12 @@ main {
         .btn {
           font-size: 18px;
           padding: 5px 15px;
+          width: 100%;
+          position: absolute;
+          bottom: -50px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: white;
         }
         .btn.hidden {
           display: none;
@@ -47,8 +54,9 @@ main {
     display: flex;
     position: fixed;
     background-color: #fff;
-    top : 30vh;
-    right: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 60%;
     border-radius: 30px;
     flex-direction: column;
@@ -86,17 +94,16 @@ main {
           font-size: 14px;
         }
         h3.productName {
-          font-size: 18px;
-          margin: 15px;
+          font-size: 38px;
+          margin: 25px 0;
         }
         h4.productPrice {
           font-family: 'Alba', serif;
+          margin: 10px 0;
           font-size: 22px;
-          margin: auto;
         }
         .tagWrapper {
           display: flex;
-          justify-content: center;
           margin-bottom: 10px;
           .tag {
             border-radius: 50px;
@@ -143,14 +150,10 @@ main {
             background-color: #6DF19B;
           }
         }
-        .productDescript {
-          font-size: 12px
-        }
-
       }
     }
     .btn {
-      width: 50%;
+      width: fit-content;
       margin: auto;
       margin-bottom: 15px;
       margin-top: 25px;
