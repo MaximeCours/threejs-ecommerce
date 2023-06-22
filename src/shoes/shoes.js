@@ -88,8 +88,8 @@ function shoes(
       shoeToRotate.rotation.y += 0.003
     }
 
-    controls.minDistance = 5;
-    controls.maxDistance = 20;
+    controls.minDistance = 5
+    controls.maxDistance = 20
     controls.update()
     renderer.render(scene, camera)
     window.requestAnimationFrame(animate)

@@ -13,4 +13,18 @@ main {
     margin-top: 50px;
     text-align: center;
   }
+
+  .shoe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    img{
+      position: absolute;
+      height: 400px;
+    }
+    canvas{
+      z-index: 10;
+    }
+  }
 }

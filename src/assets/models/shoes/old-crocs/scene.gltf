@@ -1,170 +1,145 @@
 {
-    "asset" : {
-        "generator" : "Khronos glTF Blender I/O v1.6.16",
-        "version" : "2.0"
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v1.6.16",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [2, 3]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "Object_2",
+      "translation": [
+        0.004195930436253548, 0.025167779996991158, 0.3083554208278656
+      ]
     },
-    "scene" : 0,
-    "scenes" : [
-        {
-            "name" : "Scene",
-            "nodes" : [
-                2,
-                3
-            ]
-        }
-    ],
-    "nodes" : [
-        {
-            "mesh" : 0,
-            "name" : "Object_2",
-            "translation" : [
-                0.004195930436253548,
-                0.025167779996991158,
-                0.3083554208278656
-            ]
+    {
+      "children": [0],
+      "name": "crocs.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "children": [1],
+      "name": "Sketchfab_model",
+      "rotation": [
+        -0.6766535639762878, 0.031593967229127884, 0.038330793380737305,
+        0.7346241474151611
+      ],
+      "translation": [
+        1.1853986978530884, 0.32862383127212524, 11.201303482055664
+      ]
+    },
+    {
+      "name": "Point",
+      "translation": [3.484930992126465, 3.9889707565307617, -2.821495532989502]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "crocs",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
         },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8097983002662659
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
         {
-            "children" : [
-                0
-            ],
-            "name" : "crocs.obj.cleaner.materialmerger.gles"
-        },
-        {
-            "children" : [
-                1
-            ],
-            "name" : "Sketchfab_model",
-            "rotation" : [
-                -0.6766535639762878,
-                0.031593967229127884,
-                0.038330793380737305,
-                0.7346241474151611
-            ],
-            "translation" : [
-                1.1853986978530884,
-                0.32862383127212524,
-                11.201303482055664
-            ]
-        },
-        {
-            "name" : "Point",
-            "translation" : [
-                3.484930992126465,
-                3.9889707565307617,
-                -2.821495532989502
-            ]
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
         }
-    ],
-    "materials" : [
-        {
-            "doubleSided" : true,
-            "name" : "crocs",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 0
-                },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.8097983002662659
-            }
-        }
-    ],
-    "meshes" : [
-        {
-            "name" : "Object_0",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1,
-                        "TEXCOORD_0" : 2
-                    },
-                    "indices" : 3,
-                    "material" : 0
-                }
-            ]
-        }
-    ],
-    "textures" : [
-        {
-            "sampler" : 0,
-            "source" : 0
-        }
-    ],
-    "images" : [
-        {
-            "mimeType" : "image/jpeg",
-            "name" : "crocs_baseColor",
-            "uri" : "crocs_baseColor.jpg"
-        }
-    ],
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5126,
-            "count" : 41570,
-            "max" : [
-                5.3530378341674805,
-                14.260866165161133,
-                1.5181070566177368
-            ],
-            "min" : [
-                -6.808565139770508,
-                9.042598724365234,
-                -3.1544198989868164
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 41570,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 41570,
-            "type" : "VEC2"
-        },
-        {
-            "bufferView" : 3,
-            "componentType" : 5123,
-            "count" : 180000,
-            "type" : "SCALAR"
-        }
-    ],
-    "bufferViews" : [
-        {
-            "buffer" : 0,
-            "byteLength" : 498840,
-            "byteOffset" : 0
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 498840,
-            "byteOffset" : 498840
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 332560,
-            "byteOffset" : 997680
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 360000,
-            "byteOffset" : 1330240
-        }
-    ],
-    "samplers" : [
-        {
-            "magFilter" : 9729,
-            "minFilter" : 9987
-        }
-    ],
-    "buffers" : [
-        {
-            "byteLength" : 1690240,
-            "uri" : "scene.bin"
-        }
-    ]
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/jpeg",
+      "name": "crocs_baseColor",
+      "uri": "crocs_baseColor.jpg"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 41570,
+      "max": [5.3530378341674805, 14.260866165161133, 1.5181070566177368],
+      "min": [-6.808565139770508, 9.042598724365234, -3.1544198989868164],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 41570,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 41570,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 180000,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 498840,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 498840,
+      "byteOffset": 498840
+    },
+    {
+      "buffer": 0,
+      "byteLength": 332560,
+      "byteOffset": 997680
+    },
+    {
+      "buffer": 0,
+      "byteLength": 360000,
+      "byteOffset": 1330240
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1690240,
+      "uri": "scene.bin"
+    }
+  ]
 }

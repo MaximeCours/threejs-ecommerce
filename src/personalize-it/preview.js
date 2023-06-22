@@ -91,32 +91,39 @@ export function updateShoe() {
     scene.remove(scene.getObjectByName( "shoe", true ))
     const shoe = listShoes[currentModelIndex]
     loader.load(
-      `/assets/models/shoes/${shoe.model}/scene.gltf`,
-      function (gltf) {
-          const model = gltf.scene
-          model.scale.set(shoe.scale, shoe.scale, shoe.scale)
-          model.rotation.y = shoe.rotate
-          model.rotation.x = 0.5
-          model.name = "shoe"
-          const box = new THREE.Box3().setFromObject(model)
-          const center = new THREE.Vector3()
-          box.getCenter(center)
-          model.position.sub(center) // center the model
-          scene.add(model)
-      },
-      undefined,
-      function (error) {
-          console.error(error)
-      }
+        `/assets/models/shoes/${shoe.model}/scene.gltf`,
+        function (gltf) {
+            const model = gltf.scene
+            model.scale.set(shoe.scale, shoe.scale, shoe.scale)
+            model.rotation.y = shoe.rotate
+            model.rotation.x = 0.5
+            model.name = "shoe"
+            const box = new THREE.Box3().setFromObject(model)
+            const center = new THREE.Vector3()
+            box.getCenter(center)
+            model.position.sub(center) // center the model
+            scene.add(model)
+        },
+        undefined,
+        function (error) {
+            console.error(error)
+        }
     )
     currentModelIndex = currentModelIndex+1%listShoes.length
 }
 
-for (let pin of pins) {
-    addPins(pin.querySelector, pin.color, pin.texture, pin.positionX, pin.positionY, pin.positionZ, pin.rotationX, pin.rotationY, pin.rotationZ)
-}
-
-function addPins(querySelector, color = 0x000000, texture, positionX, positionY, positionZ, rotationX = 0, rotationY= 0, rotationZ= 0){
+export function addPins(
+    querySelector,
+    color = 0x000000,
+    texture,
+    positionX,
+    positionY,
+    positionZ,
+    rotationX = 0,
+    rotationY = 0,
+    rotationZ = 0,
+    mode = 'add'
+) {
     const textureLoader = new THREE.TextureLoader()
     const materials = [
         new THREE.MeshLambertMaterial({
@@ -139,10 +146,22 @@ function addPins(querySelector, color = 0x000000, texture, positionX, positionY,
         }),
     ]
 
-    const object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
-    object.position.set(positionX, positionY, positionZ)
-    object.rotation.set(rotationX, rotationY, rotationZ)
-    scene.add(object)
+    let object
+
+    if (mode === 'remove') {
+        object = scene.getObjectByName(querySelector)
+
+        if (object) {
+            scene.remove(object)
+        }
+    } else {
+        object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
+        object.position.set(positionX, positionY, positionZ)
+        object.rotation.set(rotationX, rotationY, rotationZ)
+        object.name = querySelector
+
+        scene.add(object)
+    }
 }
 
 // Light
@@ -160,7 +179,7 @@ const canvas = document.querySelector('.preview')
 
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
-  alpha: true
+  alpha: true,
 })
 
 renderer.setSize(sizes.width, sizes.height)
@@ -171,9 +190,11 @@ controls.enableDamping = true
 
 // Animate
 const animate = () => {
+  controls.minDistance = 5
+  controls.maxDistance = 20
   controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(animate)
 }
 
-animate();
+animate()
