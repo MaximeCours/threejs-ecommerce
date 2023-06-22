@@ -59,6 +59,7 @@ loader.load(
     model.scale.set(scale, scale, scale)
       model.rotation.y = rotate
       model.rotation.x = 0.5
+      model.name = "shoe"
     const box = new THREE.Box3().setFromObject(model)
     const center = new THREE.Vector3()
     box.getCenter(center)
@@ -71,6 +72,17 @@ loader.load(
   }
 )
 
+export function updateShoeColor() {
+    const shoe = scene.getObjectByName( "shoe", true )
+
+    shoe.traverse(function(node) {
+        if (node instanceof THREE.Mesh) {
+            node.material = new THREE.MeshLambertMaterial({
+                color: 0xff0000,
+            })
+        }
+    });
+}
 
 for (let pin of pins) {
     addPins(pin.querySelector, pin.color, pin.texture, pin.positionX, pin.positionY, pin.positionZ, pin.rotationX, pin.rotationY, pin.rotationZ)
