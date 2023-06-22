@@ -1,5 +1,5 @@
 import './style.scss'
-import './pins'
+// import './pins'
 import './bigPins'
 
 const pigPinContainer = document.getElementById("pigPinContainer")

@@ -25,6 +25,10 @@ main {
           width: 150px;
           height: 150px;
           margin-bottom: 15px;
+          .productStill {
+            height: 100px;
+            width: 100px;
+          }
         }
         div:hover {
           cursor: pointer;
