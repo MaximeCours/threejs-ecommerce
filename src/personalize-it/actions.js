@@ -9,13 +9,11 @@ icons.forEach((icon) => {
         updateShoe()
         break
       case "pins":
-
         break
       case "color":
         updateShoeColor()
         break
       case "rotate":
-
         break
     }
     console.log(icon)

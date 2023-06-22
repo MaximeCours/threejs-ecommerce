@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import { allShoes } from "../shoes/allShoes.js";
+import { listShoes } from "../personalize-it/listShoes.js";
 
 const model = 'footwear-crocs'
 const scale = 50
@@ -89,7 +89,7 @@ let currentModelIndex = 0;
 
 export function updateShoe() {
     scene.remove(scene.getObjectByName( "shoe", true ))
-    const shoe = allShoes[currentModelIndex]
+    const shoe = listShoes[currentModelIndex]
     loader.load(
       `/assets/models/shoes/${shoe.model}/scene.gltf`,
       function (gltf) {
@@ -109,7 +109,7 @@ export function updateShoe() {
           console.error(error)
       }
     )
-    currentModelIndex = currentModelIndex+1%allShoes.length
+    currentModelIndex = currentModelIndex+1%listShoes.length
 }
 
 for (let pin of pins) {
