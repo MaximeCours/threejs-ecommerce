@@ -5,7 +5,7 @@ main {
 
   .editor {
     position: relative;
-    .preview{
+    .preview {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -21,6 +21,10 @@ main {
         cursor: pointer;
         border: none;
         background-color: transparent;
+
+        img {
+          height: 50px;
+        }
 
         &:nth-child(1) {
           top: 0;
