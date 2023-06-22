@@ -1,5 +1,6 @@
-import { addPins } from './preview'
+import { updateShoe, updateShoeColor, addPins } from "./preview.js";
 const icons = document.querySelectorAll('.icons > button')
+
 
 // Pins
 const pins = [
@@ -39,45 +40,55 @@ const pins = [
 
 icons.forEach((icon) => {
   icon.addEventListener('click', () => {
-    const image = icon.querySelector('img')
-    if (icon.classList.contains('btnPins')) {
-      if (icon.classList.contains('active')) {
-        image.src = '/assets/icons/no-pins.svg'
-        // Retire pins
-        for (let pin of pins) {
-          addPins(
-            pin.querySelector,
-            pin.color,
-            pin.texture,
-            pin.positionX,
-            pin.positionY,
-            pin.positionZ,
-            pin.rotationX,
-            pin.rotationY,
-            pin.rotationZ,
-            'remove'
-          )
+    switch (icon.id){
+      case "model":
+        updateShoe()
+        break
+      case "pins":
+        const image = icon.querySelector('img')
+        if (icon.classList.contains('active')) {
+          image.src = '/assets/icons/no-pins.svg'
+          // Retire pins
+          for (let pin of pins) {
+            addPins(
+                pin.querySelector,
+                pin.color,
+                pin.texture,
+                pin.positionX,
+                pin.positionY,
+                pin.positionZ,
+                pin.rotationX,
+                pin.rotationY,
+                pin.rotationZ,
+                'remove'
+            )
+          }
+          icon.classList.remove('active')
+        } else {
+          image.src = '/assets/icons/with-pins.svg'
+          // Affiche les pins
+          for (let pin of pins) {
+            addPins(
+                pin.querySelector,
+                pin.color,
+                pin.texture,
+                pin.positionX,
+                pin.positionY,
+                pin.positionZ,
+                pin.rotationX,
+                pin.rotationY,
+                pin.rotationZ,
+                'add'
+            )
+          }
+          icon.classList.add('active')
         }
-        icon.classList.remove('active')
-      } else {
-        image.src = '/assets/icons/with-pins.svg'
-        // Affiche les pins
-        for (let pin of pins) {
-          addPins(
-            pin.querySelector,
-            pin.color,
-            pin.texture,
-            pin.positionX,
-            pin.positionY,
-            pin.positionZ,
-            pin.rotationX,
-            pin.rotationY,
-            pin.rotationZ,
-            'add'
-          )
-        }
-        icon.classList.add('active')
-      }
+        break
+      case "color":
+        updateShoeColor()
+        break
+      case "rotate":
+        break
     }
   })
 })

@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { listShoes, listColors } from "./listShoes.js";
 
 const model = 'footwear-crocs'
 const scale = 50
@@ -22,8 +23,9 @@ loader.load(
   function (gltf) {
     const model = gltf.scene
     model.scale.set(scale, scale, scale)
-    model.rotation.y = rotate
-    model.rotation.x = 0.5
+      model.rotation.y = rotate
+      model.rotation.x = 0.5
+      model.name = "shoe"
     const box = new THREE.Box3().setFromObject(model)
     const center = new THREE.Vector3()
     box.getCenter(center)
@@ -36,56 +38,99 @@ loader.load(
   }
 )
 
+let currentColorIndex = 0;
+export function updateShoeColor() {
+    const shoe = scene.getObjectByName( "shoe", true )
+    const color = listColors[currentColorIndex]
+
+    shoe.traverse(function(node) {
+        if (node instanceof THREE.Mesh) {
+            node.material = new THREE.MeshLambertMaterial({
+                color: color,
+            })
+        }
+    });
+
+    currentColorIndex = (currentColorIndex+1)%(listColors.length)
+}
+
+let currentModelIndex = 0;
+
+export function updateShoe() {
+    scene.remove(scene.getObjectByName( "shoe", true ))
+    const shoe = listShoes[currentModelIndex]
+    loader.load(
+        `/assets/models/shoes/${shoe.model}/scene.gltf`,
+        function (gltf) {
+            const model = gltf.scene
+            model.scale.set(shoe.scale, shoe.scale, shoe.scale)
+            model.rotation.y = shoe.rotateY
+            model.rotation.x = shoe.rotateX
+            model.name = "shoe"
+            const box = new THREE.Box3().setFromObject(model)
+            const center = new THREE.Vector3()
+            box.getCenter(center)
+            model.position.sub(center) // center the model
+            scene.add(model)
+        },
+        undefined,
+        function (error) {
+            console.error(error)
+        }
+    )
+    currentModelIndex = (currentModelIndex+1)%(listShoes.length)
+}
+
 export function addPins(
-  querySelector,
-  color = 0x000000,
-  texture,
-  positionX,
-  positionY,
-  positionZ,
-  rotationX = 0,
-  rotationY = 0,
-  rotationZ = 0,
-  mode = 'add'
+    querySelector,
+    color = 0x000000,
+    texture,
+    positionX,
+    positionY,
+    positionZ,
+    rotationX = 0,
+    rotationY = 0,
+    rotationZ = 0,
+    mode = 'add'
 ) {
-  const textureLoader = new THREE.TextureLoader()
-  const materials = [
-    new THREE.MeshLambertMaterial({
-      color: color,
-    }),
-    new THREE.MeshLambertMaterial({
-      color: color,
-    }),
-    new THREE.MeshLambertMaterial({
-      color: color,
-    }),
-    new THREE.MeshLambertMaterial({
-      color: color,
-    }),
-    new THREE.MeshLambertMaterial({
-      map: textureLoader.load(`/personalize-it/textures/${texture}`),
-    }),
-    new THREE.MeshLambertMaterial({
-      color: color,
-    }),
-  ]
+    const textureLoader = new THREE.TextureLoader()
+    const materials = [
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+        new THREE.MeshLambertMaterial({
+            map: textureLoader.load(`/personalize-it/textures/${texture}`),
+        }),
+        new THREE.MeshLambertMaterial({
+            color: color,
+        }),
+    ]
 
-  let object
+    let object
 
-  if (mode === 'remove') {
-    object = scene.getObjectByName(querySelector)
+    if (mode === 'remove') {
+        object = scene.getObjectByName(querySelector)
 
-    if (object) {
-      scene.remove(object)
+        if (object) {
+            scene.remove(object)
+        }
+    } else {
+        object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
+        object.position.set(positionX, positionY, positionZ)
+        object.rotation.set(rotationX, rotationY, rotationZ)
+        object.name = querySelector
+
+        scene.add(object)
     }
-  } else {
-    object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
-    object.position.set(positionX, positionY, positionZ)
-    object.rotation.set(rotationX, rotationY, rotationZ)
-    object.name = querySelector
-
-    scene.add(object)
-  }
 }
 
 // Light

@@ -57,14 +57,14 @@ ul {
   cursor: pointer;
 
   &.addToCart {
-    padding-left: 90px;
+    padding-left: 80px;
 
     &::before {
       position: absolute;
       top: 50%;
       left: 20px;
-      transform: translate(0, -40%);
-      content: url('/icons/cart.svg');
+      transform: translate(0, -40%) scale(0.8);
+      content: url('/assets/icons/cart.svg');
     }
   }
 }
