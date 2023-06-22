@@ -1,46 +1,11 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import { listShoes } from "../personalize-it/listShoes.js";
+import { listShoes, listColors } from "./listShoes.js";
 
 const model = 'footwear-crocs'
 const scale = 50
 const rotate = -2.5
-
-const pins = [
-    {
-        querySelector: '.pig',
-        color: 0xde9ba3,
-        texture: 'pig.png',
-        positionX: 0.7,
-        positionY: -1.8,
-        positionZ: 3.5,
-        rotationX: -0.8,
-        rotationY: -0.3,
-    },
-    {
-        querySelector: '.human',
-        color: 0xcd9971,
-        texture: 'human.png',
-        positionX: 2.4,
-        positionY: 0.8,
-        positionZ: 0.8,
-        rotationX: -1.2,
-        rotationY: 0.8,
-        rotationZ: 1,
-    },
-    {
-        querySelector: '.monster',
-        color: 0x2d2a2d,
-        texture: 'monster.png',
-        positionX: 4,
-        positionY: -1.5,
-        positionZ: 4,
-        rotationX: -1.2,
-        rotationY: -0.2,
-        rotationZ: 1,
-    },
-]
 
 // Sizes
 const sizes = {
@@ -73,16 +38,20 @@ loader.load(
   }
 )
 
+let currentColorIndex = 0;
 export function updateShoeColor() {
     const shoe = scene.getObjectByName( "shoe", true )
+    const color = listColors[currentColorIndex]
 
     shoe.traverse(function(node) {
         if (node instanceof THREE.Mesh) {
             node.material = new THREE.MeshLambertMaterial({
-                color: 0xff0000,
+                color: color,
             })
         }
     });
+
+    currentColorIndex = (currentColorIndex+1)%(listColors.length)
 }
 
 let currentModelIndex = 0;
@@ -95,8 +64,8 @@ export function updateShoe() {
         function (gltf) {
             const model = gltf.scene
             model.scale.set(shoe.scale, shoe.scale, shoe.scale)
-            model.rotation.y = shoe.rotate
-            model.rotation.x = 0.5
+            model.rotation.y = shoe.rotateY
+            model.rotation.x = shoe.rotateX
             model.name = "shoe"
             const box = new THREE.Box3().setFromObject(model)
             const center = new THREE.Vector3()
@@ -109,7 +78,7 @@ export function updateShoe() {
             console.error(error)
         }
     )
-    currentModelIndex = currentModelIndex+1%listShoes.length
+    currentModelIndex = (currentModelIndex+1)%(listShoes.length)
 }
 
 export function addPins(
