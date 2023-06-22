@@ -16,9 +16,11 @@ main {
       width: 700px;
       height: 600px;
 
-      img {
+      button {
         position: absolute;
         cursor: pointer;
+        border: none;
+        background-color: transparent;
 
         &:nth-child(1) {
           top: 0;
