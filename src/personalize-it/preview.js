@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { allShoes } from "../shoes/allShoes.js";
 
 const model = 'footwear-crocs'
 const scale = 50
@@ -82,6 +83,33 @@ export function updateShoeColor() {
             })
         }
     });
+}
+
+let currentModelIndex = 0;
+
+export function updateShoe() {
+    scene.remove(scene.getObjectByName( "shoe", true ))
+    const shoe = allShoes[currentModelIndex]
+    loader.load(
+      `/assets/models/shoes/${shoe.model}/scene.gltf`,
+      function (gltf) {
+          const model = gltf.scene
+          model.scale.set(shoe.scale, shoe.scale, shoe.scale)
+          model.rotation.y = shoe.rotate
+          model.rotation.x = 0.5
+          model.name = "shoe"
+          const box = new THREE.Box3().setFromObject(model)
+          const center = new THREE.Vector3()
+          box.getCenter(center)
+          model.position.sub(center) // center the model
+          scene.add(model)
+      },
+      undefined,
+      function (error) {
+          console.error(error)
+      }
+    )
+    currentModelIndex = currentModelIndex+1%allShoes.length
 }
 
 for (let pin of pins) {

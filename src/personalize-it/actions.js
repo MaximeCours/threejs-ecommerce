@@ -1,4 +1,4 @@
-import { updateShoeColor } from "./preview.js";
+import { updateShoe, updateShoeColor } from "./preview.js";
 
 const icons = document.querySelectorAll('.icons > img')
 
@@ -6,7 +6,7 @@ icons.forEach((icon) => {
   icon.addEventListener('click', () => {
     switch (icon.id){
       case "model":
-
+        updateShoe()
         break
       case "pins":
 
