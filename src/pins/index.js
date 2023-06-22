@@ -11,12 +11,19 @@ pigPinContainer.addEventListener('mouseleave', function() {
     pigButton.classList.toggle('hidden')
 })
 const pigPinDetails = document.getElementById("pigPinDetails")
+const pigPinInfo = document.getElementById("pigPinInfo")
 const pigPinBack = document.getElementById("pigPinBack")
+const createCanvas = document.createElement(canvas)
+createCanvas.classList.add('pig-big')
+createCanvas.style.width = '450px'
+createCanvas.style.height = '450px'
 pigButton.addEventListener('click', function() {
-    pigPinDetails.classList.remove('hidden')
+    pigPinInfo.append(createCanvas)
+    pigPinDetails.remove('hidden')
 })
 pigPinBack.addEventListener('click', function() {
     pigPinDetails.classList.add('hidden')
+    createCanvas.remove()
 })
 
 
