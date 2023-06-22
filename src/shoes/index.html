@@ -12,28 +12,135 @@
       <h1>Made to stand-out, made for your Crocs !</h1>
       <section>
         <ul>
-          <li>
-            <canvas class="close-crocs"></canvas>
+          <li class="productContainer" id="closeCrocsContainer">
+            <div>
+              <canvas class="close-crocs"></canvas>
+            </div>
+            <button class="btn hidden" id="closeCrocsButton">Show details</button>
           </li>
-          <li>
+          <li class="productContainer" id="violetCrocsContainer">
+            <div>
             <canvas class="violet-crocs"></canvas>
+            </div>
+            <button class="btn hidden" id="violetCrocsButton">Show details</button>
           </li>
-          <li>
+          <li class="productContainer" id="retroCrocsContainer">
+            <div>
             <canvas class="retro-crocs"></canvas>
+            </div>
+            <button class="btn hidden" id="retroCrocsButton">Show details</button>
           </li>
-          <li>
+          <li class="productContainer" id="punkBlackCrocsContainer">
+            <div>
             <canvas class="punk-black-crocs"></canvas>
-          </li>
-          <li>
+          </div>
+          <button class="btn hidden" id="punkBlackCrocsButton">Show details</button>
+        </li>
+        <li class="productContainer" id="punkJeanCrocsContainer">
+          <div>
             <canvas class="punk-jean-crocs"></canvas>
+          </div>
+          <button class="btn hidden" id="punkJeanCrocsButton">Show details</button>
           </li>
-          <li>
+          <li class="productContainer" id="oldCrocsContainer">
+            <div>
             <canvas class="old-crocs"></canvas>
+          </div>
+          <button class="btn hidden" id="oldCrocsButton">Show details</button>
           </li>
-          <li>
+          <li class="productContainer" id="footwearCrocsContainer">
+            <div>
             <canvas class="footwear-crocs"></canvas>
+          </div>
+          <button class="btn hidden" id="footwearCrocsButton">Show details</button>
           </li>
         </ul>
+      </section>
+      <section>
+        <div class="productDetails hidden" id="closeCrocsDetails">
+          <span class="back" id="closeCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="close-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">La classique</h3>
+              <h4 class="productPrice">25 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+        <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="violetCrocsDetails">
+          <span class="back" id="violetCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="violet-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">La mouchetée</h3>
+              <h4 class="productPrice">28 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="retroCrocsDetails">
+          <span class="back" id="retroCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="retro-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">La retro</h3>
+              <h4 class="productPrice">30 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="punkBlackCrocsDetails">
+          <span class="back" id="punkBlackCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="punk-black-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">La punk</h3>
+              <h4 class="productPrice">24 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="punkJeanCrocsDetails">
+          <span class="back" id="punkJeanCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="punk-jean-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">La grunge</h3>
+              <h4 class="productPrice">24 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="oldCrocsDetails">
+          <span class="back" id="oldCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="old-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">L'indémodable</h3>
+              <h4 class="productPrice">23 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+        </div>
+        <div class="productDetails hidden" id="footwearCrocsDetails">
+          <span class="back" id="footwearCrocsBack"></span>
+          <div class="shoeInfo">
+            <canvas class="footwear-crocs-big"></canvas>
+            <article class="productDetailsWrapper">
+              <h3 class="productName">La pro</h3>
+              <h4 class="productPrice">20 $</h4>
+              <p class="productDescript">Nunc ligula felis, condimentum sed facilisis eu, maximus ut dui. Proin ullamcorper ligula a.</p>
+            </article>
+          </div>
+          <button class="btn">Add to cart</button>
+          </div>
       </section>
     </main>
     <div class="footer"></div>
