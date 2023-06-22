@@ -6,41 +6,6 @@ const model = 'footwear-crocs'
 const scale = 50
 const rotate = -2.5
 
-const pins = [
-    {
-        querySelector: '.pig',
-        color: 0xde9ba3,
-        texture: 'pig.png',
-        positionX: 0.7,
-        positionY: -1.8,
-        positionZ: 3.5,
-        rotationX: -0.8,
-        rotationY: -0.3,
-    },
-    {
-        querySelector: '.human',
-        color: 0xcd9971,
-        texture: 'human.png',
-        positionX: 2.4,
-        positionY: 0.8,
-        positionZ: 0.8,
-        rotationX: -1.2,
-        rotationY: 0.8,
-        rotationZ: 1,
-    },
-    {
-        querySelector: '.monster',
-        color: 0x2d2a2d,
-        texture: 'monster.png',
-        positionX: 4,
-        positionY: -1.5,
-        positionZ: 4,
-        rotationX: -1.2,
-        rotationY: -0.2,
-        rotationZ: 1,
-    },
-]
-
 // Sizes
 const sizes = {
   width: 700,
@@ -57,8 +22,8 @@ loader.load(
   function (gltf) {
     const model = gltf.scene
     model.scale.set(scale, scale, scale)
-      model.rotation.y = rotate
-      model.rotation.x = 0.5
+    model.rotation.y = rotate
+    model.rotation.x = 0.5
     const box = new THREE.Box3().setFromObject(model)
     const center = new THREE.Vector3()
     box.getCenter(center)
@@ -71,38 +36,56 @@ loader.load(
   }
 )
 
+export function addPins(
+  querySelector,
+  color = 0x000000,
+  texture,
+  positionX,
+  positionY,
+  positionZ,
+  rotationX = 0,
+  rotationY = 0,
+  rotationZ = 0,
+  mode = 'add'
+) {
+  const textureLoader = new THREE.TextureLoader()
+  const materials = [
+    new THREE.MeshLambertMaterial({
+      color: color,
+    }),
+    new THREE.MeshLambertMaterial({
+      color: color,
+    }),
+    new THREE.MeshLambertMaterial({
+      color: color,
+    }),
+    new THREE.MeshLambertMaterial({
+      color: color,
+    }),
+    new THREE.MeshLambertMaterial({
+      map: textureLoader.load(`/personalize-it/textures/${texture}`),
+    }),
+    new THREE.MeshLambertMaterial({
+      color: color,
+    }),
+  ]
 
-for (let pin of pins) {
-    addPins(pin.querySelector, pin.color, pin.texture, pin.positionX, pin.positionY, pin.positionZ, pin.rotationX, pin.rotationY, pin.rotationZ)
-}
+  let object
 
-function addPins(querySelector, color = 0x000000, texture, positionX, positionY, positionZ, rotationX = 0, rotationY= 0, rotationZ= 0){
-    const textureLoader = new THREE.TextureLoader()
-    const materials = [
-        new THREE.MeshLambertMaterial({
-            color: color,
-        }),
-        new THREE.MeshLambertMaterial({
-            color: color,
-        }),
-        new THREE.MeshLambertMaterial({
-            color: color,
-        }),
-        new THREE.MeshLambertMaterial({
-            color: color,
-        }),
-        new THREE.MeshLambertMaterial({
-            map: textureLoader.load(`/personalize-it/textures/${texture}`),
-        }),
-        new THREE.MeshLambertMaterial({
-            color: color,
-        }),
-    ]
+  if (mode === 'remove') {
+    object = scene.getObjectByName(querySelector)
 
-    const object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
+    if (object) {
+      scene.remove(object)
+    }
+  } else {
+    object = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 0.4), materials)
     object.position.set(positionX, positionY, positionZ)
     object.rotation.set(rotationX, rotationY, rotationZ)
+    object.name = querySelector
+
     scene.add(object)
+  }
 }
 
 // Light
@@ -120,7 +103,7 @@ const canvas = document.querySelector('.preview')
 
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
-  alpha: true
+  alpha: true,
 })
 
 renderer.setSize(sizes.width, sizes.height)
@@ -131,9 +114,11 @@ controls.enableDamping = true
 
 // Animate
 const animate = () => {
+  controls.minDistance = 5
+  controls.maxDistance = 20
   controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(animate)
 }
 
-animate();
+animate()

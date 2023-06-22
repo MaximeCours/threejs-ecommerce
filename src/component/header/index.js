@@ -15,9 +15,9 @@ document.querySelector('.header').innerHTML = `
     ${pages
       .map(
         (page) => `
-    <li ${pathname === page.url ? "class='active'" : ''}><a href="${page.url}">${
-          page.name
-        }</a></li>
+    <li ${pathname === page.url ? "class='active'" : ''}><a href="${
+          page.url
+        }">${page.name}</a></li>
   `
       )
       .join('')}
