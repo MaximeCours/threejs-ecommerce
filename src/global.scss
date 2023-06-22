@@ -44,10 +44,12 @@ ul {
   position: relative;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 30px;
+
+  font-size: 26px;
+  line-height: 45px;
   border: 3px solid #000;
   border-radius: 50px;
-  padding: 12px 30px;
+  padding: 10px 30px;
   color: #000;
   background-color: transparent;
   text-decoration: none;
@@ -64,4 +66,10 @@ ul {
       content: url('/icons/cart.svg');
     }
   }
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
 }

@@ -1,2 +1,3 @@
 import './style.scss'
-import './pins'
+import './bigPins'
+import './products'
