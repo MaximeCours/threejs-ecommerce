@@ -73,4 +73,10 @@ ul {
   color: #fff;
   background-color: #000;
   cursor: pointer;
+
+  &.addToCart {
+    &::before {
+      content: url('/assets/icons/cart-white.svg');
+    }
+  }
 }

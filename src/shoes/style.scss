@@ -15,6 +15,7 @@ main {
       gap: 50px;
       justify-content: space-between;
       li {
+        position: relative;
         div {
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
@@ -32,6 +33,11 @@ main {
         font-size: 18px;
         padding: 5px 15px;
         width: 100%;
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
       }
       .btn.hidden {
         display: none;
@@ -42,11 +48,15 @@ main {
       display: flex;
       position: fixed;
       background-color: #fff;
-      top : 30vh;
-      right: 20%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 60%;
       border-radius: 30px;
       flex-direction: column;
+      .btn{
+        width: fit-content;
+      }
       .back {
         background-image: url(./../assets/back.svg);
         background-repeat: no-repeat;
@@ -71,6 +81,7 @@ main {
           width: 40%;
           display: flex;
           flex-direction: column;
+          position: relative;
           .productCollection {
             text-align: right;
             padding: 10px;
@@ -81,13 +92,12 @@ main {
             font-size: 14px;
           }
           h3.productName {
-            font-size: 18px;
-            margin: 15px;
+            font-size: 38px;
+            margin: 15px 0;
           }
           h4.productPrice {
             font-family: 'Alba', serif;
             font-size: 22px;
-            margin: auto;
           }
         }
       }
@@ -102,4 +112,4 @@ main {
   .productDetails.hidden {
     display: none;
   }
-    }
+}
